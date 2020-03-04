@@ -1,0 +1,10 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.welcome{
+    position: fixed;
+    top: 40%;
+    left: 22%;
+    font-size: 52px;
+    color: white;
+
+  }

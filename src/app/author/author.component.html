@@ -1,0 +1,17 @@
+
+                <div fxLayout='row' fxLayoutGap="2rem" fxLayoutAlign="center" class="example-card">
+                        <mat-card *ngFor="let author of authors" style="margin:10px">
+                                <mat-card-header>
+                                  <mat-card-title>{{author.authorName}}</mat-card-title>
+                                </mat-card-header>
+                                <img mat-card-image src="assets/profile.png" alt="Photo of author" >
+                                <mat-card-content>
+                                  <p>
+                                  </p>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                  <button mat-button>BOOKS</button>
+                                  <button mat-button (click)="deleteAuthor(author._id)">DELETE</button>
+                                </mat-card-actions>
+                              </mat-card>
+        </div>

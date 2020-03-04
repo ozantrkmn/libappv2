@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Edit</h2>
+
+<mat-dialog-content class="formdialog">
+        <mat-form-field>
+                <mat-label>Publisher</mat-label>
+                <mat-select [(ngModel)]="bookdetail.publisher"  [ngModelOptions]="{standalone: true}" name="publisher">
+                  <mat-option *ngFor="let publisher of publishers" [value]="publisher">
+                    {{publisher.publishername}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Author</mat-label>
+                <mat-select [(ngModel)]="bookdetail.author"  [ngModelOptions]="{standalone: true}" name="author">
+                  <mat-option *ngFor="let author of authors" [value]="author">
+                    {{author.authorName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <mat-form-field>
+              <input matInput [(ngModel)]="bookdetail.bookname" class="form-control" placeholder="Book Name">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Publish Date" [(ngModel)]="bookdetail.publishdate">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [(ngModel)]="bookdetail.desc" class="form-control" placeholder="Description">
+            </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
